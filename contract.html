@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>契約</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="./bower_components/web3/dist/web3.min.js"></script>
+	<script src="BuyHouse.js"></script>
+	<style>
+	body {
+	position: relative; 
+	}
+	#contract {padding-top:50px;height:2250px;color: #fff; background-color: #8E8E8E;}
+	#section1 {padding-top:50px;height:250px;color: #fff; background-color: #6C6C6C;}
+	#section2 {padding-top:50px;height:250px;color: #fff; background-color: #8E8E8E;}
+	#section3 {padding-top:50px;height:500px;color: #fff; background-color: #6C6C6C;}
+	#section4 {padding-top:50px;height:300px;color: #fff; background-color: #8E8E8E;}
+	#section5 {padding-top:50px;height:250px;color: #fff; background-color: #6C6C6C;}
+	#section6 {padding-top:50px;height:250px;color: #fff; background-color: #8E8E8E;}
+	#section7 {padding-top:50px;height:250px;color: #fff; background-color: #6C6C6C;}
+	#section8 {padding-top:50px;height:250px;color: #fff; background-color: #8E8E8E;}
+	#section9 {padding-top:50px;height:300px;color: #fff; background-color: #6C6C6C;}
+	#section10 {padding-top:50px;height:250px;color: #fff; background-color: #8E8E8E;}
+	#section11 {padding-top:50px;height:250px;color: #fff; background-color: #6C6C6C;}
+	#section12 {padding-top:50px;height:200px;color: #fff; background-color: #8E8E8E;}
+	#section13 {padding-top:50px;height:200px;color: #fff; background-color: #6C6C6C;}
+	#section14 {padding-top:50px;height:300px;color: #fff; background-color: #8E8E8E;}
+	</style>
+</head>	
+
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" style="background-color:gray">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Buy House</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+		  <li><a href="#contract">合約內容</a></li>
+          <li><a href="#section1">第一條</a></li>
+          <li><a href="#section2">第二條</a></li>
+          <li><a href="#section3">第三條</a></li>
+		  <li><a href="#section4">第四條</a></li>
+		  <li><a href="#section5">第五條</a></li>
+		  <li><a href="#section6">第六條</a></li>
+		  <li><a href="#section7">第七條</a></li>
+		  <li><a href="#section8">第八條</a></li>
+		  <li><a href="#section9">第九條</a></li>
+		  <li><a href="#section10">第十條</a></li>
+		  <li><a href="#section11">第十一條</a></li>
+		  <li><a href="#section12">第十二條</a></li>
+		  <li><a href="#section13">第十三條</a></li>
+		  <li><a href="#section14">第十四條</a></li>
+		  <li><a href="buySell.html">返回</a></li>
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>   
+<br><br> 
+<div id="contract" class="container">
+	<div class="container col-md-8 col-md-offset-4">
+		<h1><b>買賣雙方房屋契約</b></h1>
+	</div>
+  <div class="form-group">
+  <!--房屋資訊-->
+  	<p><h2><b>房屋資訊</b></h2></p>
+      <label for="inputPassword" class="col-sm-2 control-label"><h3>房屋住址</h3></label>
+      <input class="form-control" id="house_Address" type="text" placeholder="台北市大案區" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>房屋價格</h3></label>
+      <input class="form-control" id="house_Price" type="text" placeholder="50塊" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>房屋年齡</h3></label>
+      <input class="form-control" id="house_Age" type="text" placeholder="46" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>房間數</h3></label>
+      <input class="form-control" id="numberOfRooms" type="text" placeholder="3" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>客廳數</h3></label>
+      <input class="form-control" id="numberOfSalas" type="text" placeholder="3" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>衛浴數</h3></label>
+      <input class="form-control" id="numberOfBathrooms" type="text" placeholder="2" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>確認碼</h3></label>
+      <input class="form-control" id="confirmation_code" type="text" placeholder="123" disabled>
+	  <br><hr><br>
+  <!--買方資訊-->
+  	<p><h2><b>買方資訊</b></h2></p>
+      <label for="inputPassword" class="col-sm-2 control-label"><h3>買家姓名</h3></label>
+      <input class="form-control" id="BuyerName" type="text" placeholder="曾白癡" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>買家身分證字號</h3></label>
+      <input class="form-control" id="Buyer_national_id" type="text" placeholder="A123456789" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>買方住址</h3></label>
+      <input class="form-control" id="Buyer_residential_Address" type="text" placeholder="台北市信義區" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>買家電話號碼</h3></label>
+      <input class="form-control" id="Buyer_tel_Number" type="text" placeholder="0912345678" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>買家乙太坊住址</h3></label>
+      <input class="form-control" id="Buyer_ethe_Address" type="text" placeholder="0x22222222222" disabled>
+	  <br><hr><br>
+  <!--賣方資訊-->
+  	<p><h2><b>賣方資訊</b></h2></p>
+      <label for="inputPassword" class="col-sm-2 control-label"><h3>賣家姓名</h3></label>
+      <input class="form-control" id="OwnerName" type="text" placeholder="郝智障" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>賣家身分證字號</h3></label>
+      <input class="form-control" id="Owner_national_id" type="text" placeholder="A123456789" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>賣方住址</h3></label>
+      <input class="form-control" id="Owner_residential_Address" type="text" placeholder="台北市信義區" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>賣家電話號碼</h3></label>
+      <input class="form-control" id="Owner_tel_Number" type="text" placeholder="0912345678" disabled>
+	  <label for="inputPassword" class="col-sm-2 control-label"><h3>賣家乙太坊住址</h3></label>
+      <input class="form-control" id="Owner_ethe_Address" type="text" placeholder="0x1111111111111" disabled>
+	  <br><hr><br>
+	</div> 
+</div>
+<div id="section1" class="container-fluid">
+  <h3>一、適用範圍</h3>
+  <p>本契約書範本提供消費者、企業經營者及社會大眾買賣成屋時參考使用。</p>
+  <p>前項成屋，指領有使用執照，或於實施建築管理前建造完成之建築物。</p>
+  
+</div>
+<div id="section2" class="container-fluid">
+  <h3>二、買賣意義</h3>
+  <p>稱買賣者，謂當事人約定一方移轉財產權於他方，他方支付價金之契約（民法第三百四十五條）。當事人就標的物及其價金互為同意時，買賣契約即為成立。故買受人為支付價金之人，出賣人為負移轉標的物之人。民間一般契約多以甲方、乙方稱呼之，為使交易當事人直接、清楚理解自已所處之立場與權利義務關係，乃簡稱支付價金之買受人為買方，負移轉標的物之出賣人為賣方。</p>
+</div>
+<div id="section3" class="container-fluid">
+  <h3>三、買賣標的</h3>
+  <p>（一）由於契約書之應記載事項繁多，為防止填寫筆誤或疏漏，建議將土地使用分區證明書、土地、建物權狀影本（或登記簿謄本）、共有部分附表、車位種類、位置、分管協議、規約等重要文件列為本契約之附件，視為契約之一部分。</p>
+  <p>（二）樓頂平台、法定空地、露台等，如為約定專用部分，宜特別註明，如有分管協議或規約者宜列為附件。</p>
+  <p>（三）買賣雙方對於買賣標的物是否包含違章建物、冷氣、傢俱．．．或其他附屬設備等，時有爭執，本契約範本乃設計「建物現況確認書」，由買賣雙方互為確認，以杜糾紛。</p>
+  <p>（四）未依法申請增、加建之建物（定著物、工作物）仍得為買賣標的；惟政府編撰之契約書範本不鼓勵違章建築物之買賣，故未於契約本文明示，而移列於「建物現況確認書」。</p>
+  <p>（五）買賣標的之價值或其通常之效用，有滅失或減少之瑕疵，除當事人有免除擔保責任之特約外，出賣人應負法律上之擔保責任，為釐清瑕疵擔保責任歸屬，關於違章建物、房屋漏水．．．等瑕疵，由買賣雙方於「建物現況確認書」確認之。</p>
+  <p>（六）所有權人於公寓大廈有數專有部分者，於部分移轉時（如二戶僅移轉一戶）其基地之應有部分多寡，依內政部八十五年二月五日台（八五）內地字第八五七八三九四號函規定，係由當事人自行約定，惟不得約定為「零」或「全部」。然為防止基地應有部分不足致買方申請貸款被金融機構駁回等情事，買賣雙方於訂約時應查明基地應有部分比例是否合理、相當，以維護買方權益。</p>
+  <p>（七）由於停車位之登記方式不一，故簽約時應查明停車位之產權登記方式、有無分擔基地持分等事實。</p>
+</div>
+<div id="section4" class="container-fluid">
+  <h3>四、價款議定</h3>
+  <p>（一）本契約範本例示土地、房屋分別計價，有益建立土地及房屋各自之交易價格資訊，又分開計價可使房屋再出售時，本契約書得為財產交易所得之原始取得憑證，倘僅列明買賣總價，依財政部規定，出售時，必須按公告土地現值與房屋評定現值之比例計算房屋交易價格。</p>
+  <p>（二）賣方為法人時，其建物價金應註明營業稅內含或外加。</p>
+  <p>（三）如買賣標的包含違章建築，或整幢透天厝之空地、一樓前後院空地有被占用者，雙方得預為議定其扣減之價額，俾利違章建築物於交屋前被拆除或被占用部分無法於限期交付使用時，買方得自買賣總價額中扣除減損標的物效用之價值。</p>
+</div>
+<div id="section5" class="container-fluid">
+  <h3>五、付款約定</h3>
+  <p>（一）依一般交易習慣，買方按簽約、備證、完稅、交屋四期付款；賣方則同時履行其相對義務。但契約另有約定者，從其約定。</p>
+  <p>（二）民法第二百四十九條第一款規定「契約履行時，定金應返還或作為給付之一部」，故明定第一次款包含定金在內，以杜買賣價金是否包括定金之爭議。</p>
+  <p>（三）關於各項付款之期間或對待給付之相對條件僅為例示性質，當事人得斟酌「同時履行」原則，按實際需要增減之。</p>
+</div>
+<div id="section6" class="container-fluid">
+  <h3>六、貸款處理</h3>
+  <p>（一）買方應衡量個人債信或先向金融機構洽辦貸款額度。</p>
+  <p>（二）買賣標的物原已設定抵押權者，買賣雙方宜於附件「買方承受原貸款確認書」簽字確認，以明責任歸屬，並提示買方應為債務人變更等行為，以保障其權利。</p>
+</div>
+<div id="section7" class="container-fluid">
+  <h3>七、所有權移轉</h3>
+  <p>（一）課稅標準、買賣價格攸關稅費負擔之多寡，其申報日期、申報價格等應於契約書中約定。</p>
+  <p>（二）賣方若主張享受優惠稅率，應先查明是否符合平均地權條例第四十一條及土地稅法第三十四條自用住宅用地優惠稅率等相關規定。</p>
+</div>
+<div id="section8" class="container-fluid">
+  <h3>八、擔保責任</h3>
+  <p>（一）依民法第三百四十八條至第三百六十六條規定，賣方應於產權移轉登記前排除任何權利瑕疵，確保買方完整取得產權及使用權，賣方並應擔保標的物於交付時，無任何價值、效用或保證品質上之物之瑕疵。</p>
+  <p>（二）當事人就標的物之權利瑕疵擔保及物之瑕疵擔保，得另為約定，但其約定不得違反民法第三百六十六條及其他強制或禁止規定。</p>
+</div>
+<div id="section9" class="container-fluid">
+  <h3>九、違約罰則</h3>
+  <p>（一）訂定契約之目的在於求某種契約內容之實現，而違約金者，乃以確保債務之履行為目的。違約金之種類可包括損害賠償預定性違約金與懲罰性違約金兩種。民法第二百五十條第二項規定之違約金係以損害賠償額預定性質為原則，本契約範本從之。但當事人仍得依契約自由原則訂定懲罰性違約金。</p>
+  <p>（二）以往為促使契約內容之實現，其懲罰性之違約金多以已收價款總數或加倍為之，依契約自由原則而論，當事人約定之金額，無論高低，皆有其自由；然我國民法基於保護債務人經濟能力之考量，倘訂約之際債權人要求之違約金過高時，得依民法第二百五十二條規定向法院聲請酌減。</p>
+</div>
+<div id="section10" class="container-fluid">
+  <h3>十、其他約定</h3>
+  <p>（一）買賣雙方履行契約之各項權利義務，如以非對話之意思表示，其意思表示，以通知到達相對人時，發生效力，惟為慎重起見宜以「存證信函」方式通知，以利到達時間之舉證及避免糾紛。</p>
+  <p>（二）如有特殊情形者，應依相關法令規定及程序處理，例如：１、父母處分其未成年子女之財產。２、法人處分財產。３、土地法第三十四條之一、第一百零四條、第一百零七條優先購買權。</p>
+</div>
+<div id="section11" class="container-fluid">
+  <h3>十一、契約分存</h3>
+  <p>（一）契約附件種類，諸如：權狀影本、登記簿謄本、規約、車位分管協議書等。企業經營者採用本契約範本時，應向消費者說明附件之內容及效力，經消費者充分瞭解、確認，以杜糾紛。</p>
+  <p>（二）訂約時務必詳審契約條文，由雙方簽章並寫明戶籍住址及國民身分證統一編號，以免權益受損。</p>
+</div>
+<div id="section12" class="container-fluid">
+  <h3>十二、經紀人簽章</h3>
+  <p>買賣若透過不動產經紀業辦理者，應由該經紀業指派經紀人於本契約簽章。</p>
+</div>
+<div id="section13" class="container-fluid">
+  <h3>十三、確定訂約者之身分</h3>
+  <p>簽約時應先確定簽訂人之身分為真正，例如國民身分證或駕駛執照或健保卡等身分證明文件之提示。如限制行為能力人或無行為能力人訂定契約時，應依民法相關規定。</p>
+</div>
+<div id="section14" class="container-fluid">
+  <h3>十四、辦理本契約相關事宜</h3>
+  <p>（一）辦理本契約所有權移轉等相關事宜，得由買方或賣方委託另一方辨理；或由雙方共同委託或各自委託合法地政士，代理申請土地（建物）相關稅務及登記事務之處理。</p>
+  <p>（二）買賣雙方若各自委託合法地政士辦理買賣相關事務，可藉由買賣雙方之地政士確認、監督、稽核不動產的交易流程是否合理，保障雙方當事人權利。依土地登記規則第二十六條、第二十七條、第三十六條第二項及第三十七條規定，土地登記之申請，得委託代理人為之，且除上開規則另有規定外，應由權利人及義務人會同申請之。亦即現行法令尚無禁止買賣雙方各自委託地政士申辦土地登記等相關事項，惟買賣雙方將增加服務費用支出。</p>
+</div>
+<div class="container">
+<FORM action="mailto:test@cs.nthu.edu.tw" method="post">
+		<br>
+		<INPUT name="f1" type=checkbox value="agree">我已閱讀並同意使用者條款與個人資料暨隱私權保護政策<p>
+		<br>
+	<INPUT type="button" class="btn btn-primary btn-lg" value="確認送出" onclick="success();">
+	<br><br>
+	<button id="setData" type="button" class="btn btn-primary btn-lg" >輸入資料</button>
+	<button id="getData" class="btn btn-primary btn-lg" type="button" >取得資料</button>
+	<button id="getbalance" class="btn btn-primary btn-lg" type="button" >取得餘額</button>
+	<button id="transfer" type="button" class="btn btn-primary btn-lg" >轉帳</button>
+	<h4>log : </h4>
+<pre id="log"></pre>
+</FORM>
+</div>
+
+
+<script>
+		var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+		var objStream=objFSO.OpenTextFile("$filePath\nowlogin.txt",1,true,false)
+		var s = objStream.Readline(); 
+		var newarray = new Array();
+		newarray = s.split(" ")
+		var BuyerName_element = document.getElementById('BuyerName');
+		BuyerName_element.value = newarray[2];
+		var Buyer_national_id_element = document.getElementById('Buyer_national_id');
+		Buyer_national_id_element.value = newarray[4];
+		var Buyer_residential_Address_element = document.getElementById('Buyer_residential_Address');
+		Buyer_residential_Address_element.value = newarray[6];
+		var Buyer_tel_Number_element = document.getElementById('Buyer_tel_Number');
+		Buyer_tel_Number_element.value = newarray[5];
+		var Buyer_ethe_Address_element = document.getElementById('Buyer_ethe_Address');
+		Buyer_ethe_Address_element.value = newarray[8];
+		
+		
+		
+		
+		var objFSO1=new ActiveXObject("Scripting.FileSystemObject");
+		var objStream1=objFSO1.OpenTextFile("$filePath\targethouse.txt",1,true,false)
+		var s1 = objStream1.Readline(); 
+		var newarray1 = new Array();
+		newarray1 = s1.split(" ");
+		//alert(newarray1[0]);
+		var objFSO2=new ActiveXObject("Scripting.FileSystemObject");
+		var objStream2=objFSO2.OpenTextFile("$filePath\test.txt",1,true,false)
+		var s2 ;
+		var newarray2 ;
+		while (!objStream2.AtEndOfStream) 
+		{ 
+		    s2 =  objStream2.Readline();
+		    newarray2 = new Array();
+			newarray2 = s2.split(" ");
+			if(newarray1[0]==newarray2[0]){
+				break;
+			}
+			
+		
+		}
+		//alert(s2);
+		var OwnerName_element = document.getElementById('OwnerName');
+		OwnerName_element.value = newarray2[2];
+		var Owner_national_id_element = document.getElementById('Owner_national_id');
+		Owner_national_id_element.value = newarray2[4];
+		var Owner_residential_Address_element = document.getElementById('Owner_residential_Address');
+		Owner_residential_Address_element.value = newarray2[6];
+		var Owner_tel_Number_element = document.getElementById('Owner_tel_Number');
+		Owner_tel_Number_element.value = newarray2[5];
+		var Owner_ethe_Address_element = document.getElementById('Owner_ethe_Address');
+		Owner_ethe_Address_element.value = newarray2[8];
+		
+		var house_Address_element = document.getElementById('house_Address');
+		house_Address_element.value = newarray1[1];
+		var house_Price_element = document.getElementById('house_Price');
+		house_Price_element.value = newarray1[3];
+		var house_Age_element = document.getElementById('house_Age');
+		house_Age_element.value = newarray1[2];
+		var numberOfRooms_element = document.getElementById('numberOfRooms');
+		numberOfRooms_element.value = newarray1[5];
+		var numberOfSalas_element = document.getElementById('numberOfSalas');
+		numberOfSalas_element.value = newarray1[6];
+		var numberOfBathrooms_element = document.getElementById('numberOfBathrooms');
+		numberOfBathrooms_element.value = newarray1[7];
+		var confirmation_code_element = document.getElementById('confirmation_code');
+		confirmation_code_element.value = newarray1[8];
+		
+	function success(){
+		alert("恭喜您!!");
+		alert("您已成功購屋!!  歡迎入住!!!");
+		
+		
+		window.location.href='buySell.html';
+	}
+	
+	
+</script>
+</body>

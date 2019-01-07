@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Login Form</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+	function processdata(){
+		var name_element = document.getElementById('myUserName');
+		var name = name_element.value;
+		var pw_element = document.getElementById('myPassword');
+		var pw = pw_element.value;
+		
+		var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+		var objStream=objFSO.OpenTextFile("$filePath\\test.txt",1,true,false)
+		var flag = 0;
+		while (!objStream.AtEndOfStream) 
+		{ 
+			var s = objStream.Readline(); 
+			var newarray = new Array();
+			newarray = s.split(" ")
+			if(name==newarray[0]){
+				if(pw==newarray[1]){
+					alert("Login successful!!");
+					flag=1;
+					window.location.href='uploadimg.html';
+				}
+				else{
+					alert("wrong password");
+				}
+			}	
+					
+			    
+			//console.log(newarray[0]); 
+		} 
+		if(flag==0)alert("Login failed");
+	}
+	function gousersearch(){
+		window.location.href='userSearch.html';
+	}
+	function gotest(){
+		window.location.href='test.html';
+	}
+  </script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" style="background-color:lightgray">
+<!--      <h1>Login </h1>
+      <form method="post" action="index.html">
+        Username: <input type="text" id="myUserName" placeholder="input username"><br>
+		Password: <input type="password" id="myPassword" placeholder="input password"><br>
+        
+        <input type="button" value="login " onclick='processdata();'/>
+		-->
+		<br>
+		<br>
+		<br>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Buy House</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">log in</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+<br>
+
+
+		<div class="container">
+		<h1>親愛的用戶您好，請選擇:</h1>
+		<br><br>
+		<a href="userSearch.html" type="button" class="btn btn-primary btn-lg" onclick="gousersearch();"><h1>我要買房</h1></a>
+		<a href="test.html" type="button" class="btn btn-primary btn-lg" onclick="gotest();"><h1>我要賣房</h1></a>
+      </form>
+	  
+	</div>
+   
+
+  
+</body>
+</html>

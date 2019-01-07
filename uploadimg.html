@@ -1,0 +1,28 @@
+<head>
+  <title>picture upload</title>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+  <input accept="image/*" id="uploadImage" type="file">
+  <img id="img" src="">
+  <input type="button" value="¤W¶Ç" onclick='upload();'/>
+  <script>
+    $("#uploadImage").change(function(){
+      readImage( this );
+    });
+ 
+    function readImage(input) {
+      if ( input.files && input.files[0] ) {
+        var FR= new FileReader();
+        FR.onload = function(e) {
+          //e.target.result = base64 format picture
+          $('#img').attr( "src", e.target.result );
+        };       
+        FR.readAsDataURL( input.files[0] );
+      }
+    }
+	function upload(){
+		console.log(document.getElementById('uploadImage').value);
+	}
+  </script>
+</body>

@@ -1,0 +1,45 @@
+<form name='form1' id='form1' action="">
+            <h1>�Ыθ��ƿ��J</h1>
+���}: <input type="text" id="houseAddress" placeholder="�п��J�ЫΦ��}..."><br>
+�~��: <input type="number" id="houseAge" placeholder="�п��J�ЫΦ~��..."><br>
+�ж���: <input type="number" id="houseNumberOfRooms">��
+        <input type="number" id="houseNumberOfSalas">�U
+        <input type="number" id="houseNumberOfBathrooms">�� <br>
+�Ӥ�:<input type="file" id="housePicture" name:"pictures"><br> 
+�ЫνT�{�N�X:<input type="number" id="confirmation_code"><br>
+       
+<input type="submit" value="���J">
+</form>
+
+<script>
+	  
+	  
+	  
+	  
+		function process() {
+  var houseAddress_element = document.getElementById('houseAddress');
+  var houseAddress = houseAddress_element.value;
+  var houseAge_element = document.getElementById('houseAge');
+  var houseAge = houseAge_element.value;
+  var houseNumberOfRooms_element = document.getElementById('houseNumberOfRooms');
+  var houseNumberOfRooms = houseNumberOfRooms_element.value;
+  var houseNumberOfSalas_element = document.getElementById('houseNumberOfSalas');
+  var houseNumberOfSalas = houseNumberOfSalas_element.value;
+  var houseNumberOfBathrooms_element = document.getElementById('houseNumberOfBathrooms');
+  var houseNumberOfBathrooms = houseNumberOfBathrooms_element.value;
+  var confirmation_code_element = document.getElementById('confirmation_code');
+  var confirmation_code = confirmation_code_element.value;
+  
+  var objFSO1=new ActiveXObject("Scripting.FileSystemObject");
+  var objStream1=objFSO1.OpenTextFile("$filePath\nowlogin.txt",1,true,false)
+  var s = objStream1.Readline(); 
+  var newarray = new Array();
+  newarray = s.split(" ");
+  
+  var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+  var objStream=objFSO.OpenTextFile("$filePath\house.txt",8,true,false)
+  objStream.WriteLine(newarray[0]+" "+houseAddress+" "+houseAge+" "+houseNumberOfRooms+" "+houseNumberOfSalas+" "+houseNumberOfBathrooms+" "+confirmation_code);
+  
+  
+}
+</script>

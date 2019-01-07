@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+<body style="background-color:lightgray">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Buy House</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#">news</a></li>
+		  <li><a href="#">introduction</a></li>
+		  <li><a href="#">Guidance</a></li>
+		  <li><a href="#">information</a></li>
+		  <li><a href="#">about us</a></li>
+		  <li><a href="#">Q & A</a></li>
+		  
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav> 
+<br><br><br> 
+
+<div class="container-fluid">
+
+    <h2>您所點選的房屋資訊</h2>
+
+    <img src="pictures/1.1.jpg" alt="房屋圖片" style="width:152px;height:200px;">
+	<img src="pictures/1.2.jpg" alt="房屋圖片" style="width:152px;height:200px;">
+	<img src="pictures/1.3.jpg" alt="房屋圖片" style="width:152px;height:200px;">
+	<img src="pictures/1.4.jpg" alt="房屋圖片" style="width:152px;height:200px;">
+	<img src="pictures/1.5.jpg" alt="房屋圖片" style="width:152px;height:200px;">
+	<p  id="pic1" ></p>
+<table>
+     <tr>
+        <td class="table_title"></td>
+        <td><span class="houseAddress"></span></td>
+		<p  id="hA" ></p>
+    </tr>
+    <tr>
+        <td class="table_title"></td>
+        <td> <span class="price"></span> </td>
+		<p  id="pri" ></p>
+    </tr>
+
+    <tr>
+        <td class="table_title"></td>
+        <td colspan="3"></td>
+		<p  id="numofroom" ></p>
+		<p  id="numofsalas" ></p>
+		<p  id="numofbath" ></p>
+    </tr>
+    <tr>
+        <td class="table_title"></td>
+        <td><span class="area"></span></td>
+		<p  id="area" ></p>
+		<p  id="age" ></p>
+    </tr>
+    <tr>
+        <td class="table_title"></td>
+        <td><span class="houseAge"></span></td>
+    </tr>
+
+</table>
+<a href="code_confirmation.html" type="button" class="btn btn-primary btn-lg">我要買</a>
+<a href="userSearch.html" type="button" class="btn btn-primary btn-lg">返回</a>
+</div>
+<script>
+	  
+		var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+		var objStream=objFSO.OpenTextFile("$filePath\\targetHouse.txt",1,true,false);
+		var newarray = new Array();
+		var s = objStream.Readline();
+		newarray = s.split(" ")
+		//alert(newarray[1]);
+		text = "<ul>";
+		text += "<li>" +"住址:  "+newarray[1] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("hA").innerHTML = text;
+		text = "<ul>";
+		text += "<li>" +"價格:  "+ newarray[3] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("pri").innerHTML = text;
+		text = "<ul>";
+		text += "<li>" +"房數:  "+ newarray[5] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("numofroom").innerHTML = text;
+		text = "<ul>";
+		text += "<li>" +"廳數:  "+ newarray[6] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("numofsalas").innerHTML = text;
+		text = "<ul>";
+		text += "<li>" +"衛浴數:  "+ newarray[7] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("numofbath").innerHTML = text;
+		text = "<ul>";
+		text += "<li>" +"坪數:  "+ newarray[4] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("area").innerHTML = text;
+		text = "<ul>";
+		text += "<li>" +"屋齡:  "+ newarray[2] + "</li>";
+		text += "</ul>"
+		//console.log(text);
+		document.getElementById("age").innerHTML = text;
+		
+		text="";
+		for(i=1;i<6;i++){
+		text += '<img src="pictures/' + "1." + i + '.jpg"' + ' alt="房屋圖片" style="width:152px;height:200px;>';
+		}
+		//console.log(text);
+		document.getElementById("pic1").innerHTML = text;
+
+	  
+    </script>
+</body>
+
+</html>

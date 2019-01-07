@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    input[type=text],
+   /* input[type=number],input[type=date],*/
+    input[type=password],input[type=email],
+     select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=number],
+    select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=date],
+        select {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+
+    input[type=submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+header{
+
+}
+
+
+    </style>
+	  <script>
+	  
+	  
+	  
+	  
+		function processFormData() {
+  var name_element = document.getElementById('myUserName');
+  var name = name_element.value;
+  var pw_element = document.getElementById('myPassword');
+  var pw = pw_element.value;
+  var realname_element = document.getElementById('myName');
+  var realname = realname_element.value;
+  var date_element = document.getElementById('myBirthdate');
+  var date = date_element.value;
+  var NID_element = document.getElementById('myNational ID');
+  var NID = NID_element.value;
+  var phone_element = document.getElementById('myPhone');
+  var phone = phone_element.value;
+  var address_element = document.getElementById('myAddress');
+  var address = address_element.value;
+  var email_element = document.getElementById('myEmail');
+  var email = email_element.value;
+  var EA_element = document.getElementById('myEthereumAddress');
+  var EA = EA_element.value;
+  
+  
+  
+  
+  var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+  var objStream=objFSO.OpenTextFile("$filePath\\test.txt",8,true,false)
+  objStream.WriteLine(name+" "+pw+" "+realname+" "+date+" "+NID+" "+phone+" "+address+" "+email+" "+EA);
+  window.location.href='login.html';
+  
+}
+  function gotohouse(){
+	window.location.href='inputHouse.html';
+  }
+  function gotologin(){
+	window.location.href='login.html';
+  }
+    </script>
+	
+</head>
+
+
+<body style="background-color:lightgray">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Buy House</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">data input</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container" >
+    <div>
+		<div class="panel panel-primary">
+		<h1>用戶資料輸入</h1>
+<form name='form' id='form' action="">
+<div class="panel-heading">帳號: <input type="text" id="myUserName" placeholder="請創立帳號..."><br></div>
+<div class="panel-body">密碼: <input type="password" id="myPassword" placeholder="請輸入密碼..."><br></div>
+<div class="panel-body">姓名: <input type="text" id="myName" placeholder="請輸入姓名...例：王大明" ><br></div>
+<div class="panel-body">生日: <input type="date" id="myBirthdate" placeholder="請輸入生日...年/月/日"><br></div>
+<div class="panel-body">身分證字號: <input type="text" id="myNational ID" placeholder="請輸入身分證字號...例：B123456789"><br></div>
+<div class="panel-body">電話: <input type="text" id="myPhone" placeholder="請輸入電話號碼...例：0988......."><br></div>
+<div class="panel-body">住址: <input type="text" id="myAddress" placeholder="請輸入住址...例：台北市文山區指南路二段1號2樓之3"><br></div>
+<div class="panel-body">電子信箱: <input type="email" id="myEmail" placeholder="請輸入電子信箱...例：johnpaul2@ylc.edu.us"><br></div>
+<div class="panel-body">以太坊住址: <input type="text" id="myEthereumAddress" placeholder="請輸入以太坊住址...例：0x14723a09acff6d2a60dcdf7aa4aff308fddc160c"><br></div>
+</div>
+<!--input type="button" value="輸入 " onclick='processFormData();'/>
+<input type="button" value="填寫房屋資訊 " onclick='gotohouse();'/>
+<input type="button" value="我要登入 " onclick='gotologin();'/>
+<div class="container"-->
+<br>
+  <div class="btn-group">
+	<input type="button"  class="btn btn-primary" value="輸入 " onclick='processFormData();'/>
+	<!--input type="button" class="btn btn-primary" value="填寫房屋資訊 " onclick='gotohouse();'/-->
+	<input type="button" class="btn btn-primary" value="我要登入 " onclick='gotologin();'/>
+	<a href="host.html" type="button" class="btn btn-primary">返回主頁</a>
+  </div>
+<br>
+<br>
+<br>
+</form>
+</div>
+
+    </div>
+</body>
+</html>
+
+
+  
+
+

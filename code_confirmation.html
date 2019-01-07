@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+function code_confirming(){
+	var objFSO=new ActiveXObject("Scripting.FileSystemObject");
+	var objStream=objFSO.OpenTextFile("$filePath\\targethouse.txt",1,true,false)
+	var s = objStream.Readline(); 
+	var newarray = new Array();
+	newarray = s.split(" ")
+	var confirmation_code_element = document.getElementById('confirmation_code');
+	var confirmation_code = confirmation_code_element.value;
+	if(confirmation_code==newarray[8]){
+		alert("code correct!");
+		window.location.href='contract.html';
+	}
+	else{
+		alert("Wrong code!");
+	}
+
+
+
+	
+  }
+  </script>
+</head>
+
+
+<body style="background-color:lightgray">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Buy House</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#">news</a></li>
+		  <li><a href="#">introduction</a></li>
+		  <li><a href="#">Guidance</a></li>
+		  <li><a href="#">information</a></li>
+		  <li><a href="#">about us</a></li>
+		  <li><a href="#">Q & A</a></li>
+		  
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav> 
+<br><br><br> 
+<div class="container-fluid">
+	<div class="panel panel-primary">
+    <div>
+        <h1>請輸入房屋代碼:</h1>
+        <form action="">
+            <div class="panel-heading"><input type="text" id="confirmation_code" placeholder="..."><br>
+            <div class="panel-body"><input type="button" class="btn btn-primary btn-lg" value="輸入" onclick='code_confirming();'/>
+			<a href="targetHouse.html" type="button" class="btn btn-primary btn-lg">返回</a>
+        </form>
+    </div>
+	</div>
+</div>
+</body>
+
+</html>
